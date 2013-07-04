@@ -3,7 +3,8 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="greeting" template="/WEB-INF/jsp/tile-greeting.jsp">
+	<definition name="base-template" template="/WEB-INF/layouts/base-template.jsp">
 		<put-attribute name="title" value="Hello World!!" />
 	</definition>
+	<definition name="greeting" template="/WEB-INF/jsp/tile-greeting.jsp" />
 </tiles-definitions>
