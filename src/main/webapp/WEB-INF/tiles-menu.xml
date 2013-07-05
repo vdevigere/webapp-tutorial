@@ -3,7 +3,5 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-	<definition name="base-template" template="/WEB-INF/layouts/base-template.jsp">
-		<put-attribute name="title" value="Hello Tiled World!!" />
-	</definition>
+	<definition name="menu" template="/WEB-INF/jsp/menu.jsp" />
 </tiles-definitions>

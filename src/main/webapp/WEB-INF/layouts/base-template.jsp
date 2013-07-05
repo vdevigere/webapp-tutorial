@@ -17,34 +17,38 @@
 		<!--  Header  -->
 		<div class="row-fluid">
 			<div class="span12">
-				<tiles:insertAttribute name="header" />
-				<h1>${productInfo.title }</h1>
+				<c:forEach var="componentTemplate" items="${HEADER }">
+					<tiles:insertDefinition name="${componentTemplate }" />
+				</c:forEach>
 			</div>
 		</div>
 		<div class="row-fluid">
 			<!-- Left Sidebar -->
 			<div class="span4">
-				<tiles:insertAttribute name="left" />
-				<select>
-					<c:forEach var="option" items="${productInfo.options }">
-						<option>${option }</option>
-					</c:forEach>
-				</select>
+				<c:forEach var="componentTemplate" items="${LEFT }">
+					<tiles:insertDefinition name="${componentTemplate }" />
+				</c:forEach>
 			</div>
 			<!-- Main Content Area -->
 			<div class="span4">
-				<tiles:insertAttribute name="body" />
+				<c:forEach var="componentTemplate" items="${MAIN }">
+					<tiles:insertDefinition name="${componentTemplate }" />
+				</c:forEach>
 			</div>
 
 			<!-- Right Sidebar -->
 			<div class="span4">
-				<tiles:insertAttribute name="right" />
+				<c:forEach var="componentTemplate" items="${RIGHT }">
+					<tiles:insertDefinition name="${componentTemplate }" />
+				</c:forEach>
 			</div>
 		</div>
 		<!-- Footer -->
 		<div class="row-fluid">
 			<div class="span12">
-				<tiles:insertAttribute name="footer" />
+				<c:forEach var="componentTemplate" items="${FOOTER }">
+					<tiles:insertDefinition name="${componentTemplate }" />
+				</c:forEach>
 			</div>
 		</div>
 	</div>
