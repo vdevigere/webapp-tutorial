@@ -14,7 +14,7 @@ public class ProductComponent implements Component {
     public String getViewName(String region) {
         if (region.equalsIgnoreCase("MAIN")) {
             return "product";
-        } else if (region.equalsIgnoreCase("RIGHT")) {
+        } else if (region.equalsIgnoreCase("FOOTER")) {
             return "productRecs";
         } else {
             return "product";

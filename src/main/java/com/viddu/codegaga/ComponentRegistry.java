@@ -25,7 +25,7 @@ public class ComponentRegistry {
 
         Set<Component> rightSet = new LinkedHashSet<Component>();
         rightSet.add(new ProductComponent());
-        componentMap.put("RIGHT", rightSet);
+        componentMap.put("FOOTER", rightSet);
 }
 
     public static Set<Component> getComponentsByRegion(String region) {
