@@ -1,29 +1,30 @@
 package com.viddu.codegaga.controllers;
 
-import java.util.EnumSet;
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.viddu.codegaga.REGION;
 import com.viddu.codegaga.RegionRenderer;
 
 @Controller
 @RequestMapping("/tiles")
-public class TilesController extends ComponentContoller{
-    
+public class TilesController extends ComponentContoller {
+
     @Inject
     RegionRenderer regionRenderer;
-    
+
     @RequestMapping("/greet")
     public ModelAndView displayGreeting() {
         ModelAndView mv = new ModelAndView(getControllerDefinition());
 
-        ModelMap mm = regionRenderer.renderRegions(getAvailableRegions());
+        Map<String, Object> mm = regionRenderer.renderRegions(getAvailableRegions());
         mv.addAllObjects(mm);
         return mv;
     }
@@ -34,7 +35,7 @@ public class TilesController extends ComponentContoller{
     }
 
     @Override
-    public EnumSet<REGION> getAvailableRegions() {
-        return EnumSet.allOf(REGION.class);
+    public Set<String> getAvailableRegions() {
+        return new LinkedHashSet<String>(Arrays.asList("HEADER", "LEFT", "RIGHT", "MAIN", "FOOTER"));
     }
 }

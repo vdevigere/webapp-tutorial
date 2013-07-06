@@ -4,4 +4,5 @@
        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
 	<definition name="product" template="/WEB-INF/jsp/product.jsp" />
+	<definition name="productRecs" template="/WEB-INF/jsp/product-recs.jsp" />
 </tiles-definitions>

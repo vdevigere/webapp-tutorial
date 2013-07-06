@@ -1,12 +1,10 @@
 package com.viddu.codegaga.controllers;
 
-import java.util.EnumSet;
-
-import com.viddu.codegaga.REGION;
+import java.util.Set;
 
 public abstract class ComponentContoller {
 
-    public abstract EnumSet<REGION> getAvailableRegions();
+    public abstract Set<String> getAvailableRegions();
 
     public abstract String getControllerDefinition();
 

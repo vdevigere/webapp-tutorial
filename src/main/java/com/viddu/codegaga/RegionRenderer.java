@@ -1,27 +1,24 @@
 package com.viddu.codegaga;
 
-import java.util.EnumSet;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
-
-import org.springframework.ui.ModelMap;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.viddu.codegaga.components.Component;
 
 public class RegionRenderer {
-    public ModelMap renderRegions(EnumSet<REGION> regionSet) {
-        ModelMap modelMap = new ModelMap();
-        for (REGION region : regionSet) {
+    public Map<String, Object> renderRegions(Set<String> regionSet) {
+        Map<String, Object> modelMap = new LinkedHashMap<String, Object>();
+        for (String region : regionSet) {
             Set<Component> regionComponents = ComponentRegistry.getComponentsByRegion(region);
             if (regionComponents != null) {
                 Set<String> componentViewSet = new LinkedHashSet<String>();
                 for (Component component : regionComponents) {
-                    ModelAndView componentMV = component.render();
-                    modelMap.addAllAttributes(componentMV.getModelMap());
-                    componentViewSet.add(componentMV.getViewName());
+                    modelMap.putAll(component.getModelMap());
+                    componentViewSet.add(component.getViewName(region));
                 }
-                modelMap.addAttribute(region.toString(), componentViewSet);
+                modelMap.put(region.toString(), componentViewSet);
             }
         }
         return modelMap;

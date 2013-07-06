@@ -1,6 +1,5 @@
 package com.viddu.codegaga;
 
-import java.util.EnumSet;
 import java.util.HashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
@@ -11,27 +10,31 @@ import com.viddu.codegaga.components.MenuComponent;
 import com.viddu.codegaga.components.ProductComponent;
 
 public class ComponentRegistry {
-    private static Map<REGION, Set<Component>> componentMap = new HashMap<REGION, Set<Component>>();
+    private static Map<String, Set<Component>> componentMap = new HashMap<String, Set<Component>>();
 
     //TODO: This should be read from a property file or some form of registry.
     static {
         Set<Component> leftSet = new LinkedHashSet<Component>();
         leftSet.add(new MenuComponent());
-        componentMap.put(REGION.LEFT, leftSet);
+        componentMap.put("LEFT", leftSet);
 
         Set<Component> mainSet = new LinkedHashSet<Component>();
         mainSet.add(new ProductComponent());
-        componentMap.put(REGION.MAIN, mainSet);
+        componentMap.put("MAIN", mainSet);
 
-    }
 
-    public static Set<Component> getComponentsByRegion(REGION region) {
+        Set<Component> rightSet = new LinkedHashSet<Component>();
+        rightSet.add(new ProductComponent());
+        componentMap.put("RIGHT", rightSet);
+}
+
+    public static Set<Component> getComponentsByRegion(String region) {
         return componentMap.get(region);
     }
 
-    public static Map<REGION, Set<Component>> getComponentMapByRegionSet(EnumSet<REGION> availableRegions) {
-        Map<REGION, Set<Component>> regionalComponentMap = new HashMap<REGION, Set<Component>>();
-        for (REGION region : availableRegions) {
+    public static Map<String, Set<Component>> getComponentMapByRegionSet(Set<String> availableRegions) {
+        Map<String, Set<Component>> regionalComponentMap = new HashMap<String, Set<Component>>();
+        for (String region : availableRegions) {
             regionalComponentMap.put(region, ComponentRegistry.getComponentsByRegion(region));
         }
         return regionalComponentMap;

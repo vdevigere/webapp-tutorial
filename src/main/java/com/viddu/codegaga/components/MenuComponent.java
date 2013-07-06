@@ -1,18 +1,26 @@
 package com.viddu.codegaga.components;
 
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.tiles.beans.MenuItem;
 import org.apache.tiles.beans.SimpleMenuItem;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.ModelMap;
 
 import com.viddu.codegaga.models.MenuBO;
 
 public class MenuComponent implements Component {
     
-    public ModelAndView render() {
-        ModelAndView mv = new ModelAndView("menu");
+
+    @Override
+    public String getViewName(String region) {
+        return "menu";
+    }
+
+    @Override
+    public Map<String, Object> getModelMap() {
+        ModelMap mm = new ModelMap();
         MenuBO menuBO = new MenuBO();
         Set<MenuItem> mainMenuItems= new LinkedHashSet<MenuItem>();
         
@@ -33,8 +41,8 @@ public class MenuComponent implements Component {
 
         menuBO.setMainMenu(mainMenuItems);
         
-        mv.addObject(menuBO);
-        return mv;
+        mm.addAttribute(menuBO);
+        return mm;
     }
 
 }

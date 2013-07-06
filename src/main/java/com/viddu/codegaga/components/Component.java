@@ -1,7 +1,10 @@
 package com.viddu.codegaga.components;
 
-import org.springframework.web.servlet.ModelAndView;
+import java.util.Map;
 
 public interface Component {
-    public ModelAndView render();
+
+    public String getViewName(String region);
+
+    public Map<String, Object> getModelMap();
 }
