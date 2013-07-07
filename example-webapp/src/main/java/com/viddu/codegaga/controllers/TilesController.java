@@ -11,11 +11,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.viddu.codegaga.RegionRenderer;
+import com.viddu.codegaga.component.ComponentController;
+import com.viddu.codegaga.component.RegionRenderer;
 
 @Controller
 @RequestMapping("/tiles")
-public class TilesController extends ComponentContoller {
+public class TilesController extends ComponentController {
 
     @Inject
     RegionRenderer regionRenderer;

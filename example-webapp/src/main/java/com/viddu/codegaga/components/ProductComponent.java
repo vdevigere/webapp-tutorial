@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.springframework.ui.ModelMap;
 
+import com.viddu.codegaga.component.Component;
 import com.viddu.codegaga.models.ProductInfo;
 import com.viddu.codegaga.models.SizeEnum;
 

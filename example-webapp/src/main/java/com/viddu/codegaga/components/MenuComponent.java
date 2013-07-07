@@ -8,6 +8,7 @@ import org.apache.tiles.beans.MenuItem;
 import org.apache.tiles.beans.SimpleMenuItem;
 import org.springframework.ui.ModelMap;
 
+import com.viddu.codegaga.component.Component;
 import com.viddu.codegaga.models.MenuBO;
 
 public class MenuComponent implements Component {
