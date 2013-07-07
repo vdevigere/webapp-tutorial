@@ -24,11 +24,12 @@ public class ComponentRegistryImpl implements ComponentRegistry {
 
         Set<Component> footerSet = new LinkedHashSet<Component>();
         footerSet.add(new ProductComponent());
+        footerSet.add(new RecommendationComponent());
         componentMap.put("FOOTER", footerSet);        
 
-        Set<Component> rightSet = new LinkedHashSet<Component>();
-        rightSet.add(new RecommendationComponent());
-        componentMap.put("FOOTER", rightSet);        
+//        Set<Component> rightSet = new LinkedHashSet<Component>();
+//        rightSet.add(new SampleComponent());
+//        componentMap.put("RIGHT", rightSet);        
 }
     
     public Set<Component> getComponentsByRegion(String region) {

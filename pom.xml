@@ -11,6 +11,7 @@
 		<module>web-components</module>
 		<module>example-webapp</module>
     <module>recommend-component</module>
+    
   </modules>
 	<dependencies>
 		<dependency>
