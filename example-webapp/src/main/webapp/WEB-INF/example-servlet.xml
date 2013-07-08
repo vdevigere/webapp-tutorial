@@ -8,10 +8,12 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+	<mvc:annotation-driven />
+
 	<context:component-scan base-package="com.viddu.codegaga.controllers" />
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver" />
-	<bean id="regionRenderer" class="com.viddu.codegaga.component.RegionRenderer"/>
-	
-	<bean id="componentRegistry" class="com.viddu.codegaga.components.ComponentRegistryImpl"/>
+	<bean id="regionRenderer" class="com.viddu.codegaga.component.RegionRenderer" />
+
+	<bean id="componentRegistry" class="com.viddu.codegaga.components.ComponentRegistryImpl" />
 </beans>

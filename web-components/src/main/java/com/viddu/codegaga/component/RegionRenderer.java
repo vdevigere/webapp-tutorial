@@ -4,13 +4,20 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
 
-public class RegionRenderer {
+import scala.concurrent.ExecutionContext;
+import scala.concurrent.Future;
+import akka.dispatch.ExecutionContexts;
+import akka.dispatch.Futures;
+
+public class RegionRenderer{
 
     private final ComponentRegistry componentRegistry;
-
+    ExecutionContext ec = ExecutionContexts.global();
+    
     @Inject
     RegionRenderer(ComponentRegistry componentRegistry) {
         this.componentRegistry = componentRegistry;
@@ -35,5 +42,14 @@ public class RegionRenderer {
             }
         }
         return modelMap;
+    }
+
+    public Future<Map<String, Object>> renderRegionsAsync(final Set<String> availableRegions) {
+        return Futures.future(new Callable<Map<String,Object>>() {
+
+            public Map<String, Object> call() throws Exception {
+                return renderRegions(availableRegions);
+            }
+        }, ec);
     }
 }

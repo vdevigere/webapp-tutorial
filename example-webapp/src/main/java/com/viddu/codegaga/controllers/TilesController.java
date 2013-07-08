@@ -7,8 +7,11 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
+import scala.concurrent.Future;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.viddu.codegaga.component.ComponentController;
@@ -22,16 +25,15 @@ public class TilesController extends ComponentController {
     RegionRenderer regionRenderer;
 
     @RequestMapping("/greet")
-    public ModelAndView displayGreeting() {
-        ModelAndView mv = new ModelAndView(getControllerDefinition());
-
-        Map<String, Object> mm = regionRenderer.renderRegions(getAvailableRegions());
-        mv.addAllObjects(mm);
-        return mv;
+    public DeferredResult<ModelAndView> displayGreeting() {
+        DeferredWebResult deferredResult = new DeferredWebResult(getViewName());
+        Future<Map<String, Object>> mmFuture = regionRenderer.renderRegionsAsync(getAvailableRegions());
+        deferredResult.completeWith(mmFuture);
+        return deferredResult;
     }
 
     @Override
-    public String getControllerDefinition() {
+    public String getViewName() {
         return "base-template";
     }
 

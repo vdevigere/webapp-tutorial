@@ -77,5 +77,10 @@
 			<artifactId>recommend-component</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.10</artifactId>
+			<version>2.2.0-RC2</version>
+		</dependency>
 	</dependencies>
 </project>

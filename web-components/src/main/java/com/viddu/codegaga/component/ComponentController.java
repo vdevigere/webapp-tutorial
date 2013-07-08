@@ -6,6 +6,6 @@ public abstract class ComponentController {
 
     public abstract Set<String> getAvailableRegions();
 
-    public abstract String getControllerDefinition();
+    public abstract String getViewName();
 
 }
