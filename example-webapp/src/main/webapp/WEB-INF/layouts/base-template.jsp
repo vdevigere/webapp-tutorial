@@ -18,7 +18,7 @@
 		<div class="row-fluid">
 			<div class="span12 well">
 				<c:forEach var="componentTemplate" items="${HEADER }">
-					<tiles:insertDefinition name="${componentTemplate }" />
+					<tiles:insertAttribute value="${componentTemplate }" flush="true" />
 				</c:forEach>
 			</div>
 		</div>
@@ -26,20 +26,20 @@
 			<!-- Left Sidebar -->
 			<div class="span4 well">
 				<c:forEach var="componentTemplate" items="${LEFT }">
-					<tiles:insertDefinition name="${componentTemplate }" />
+					<tiles:insertAttribute value="${componentTemplate }" flush="true" />
 				</c:forEach>
 			</div>
 			<!-- Main Content Area -->
 			<div class="span4 well">
 				<c:forEach var="componentTemplate" items="${MAIN }">
-					<tiles:insertDefinition name="${componentTemplate }" />
+					<tiles:insertAttribute value="${componentTemplate }" flush="true" />
 				</c:forEach>
 			</div>
 
 			<!-- Right Sidebar -->
 			<div class="span4 well">
 				<c:forEach var="componentTemplate" items="${RIGHT }">
-					<tiles:insertDefinition name="${componentTemplate }" />
+					<tiles:insertAttribute value="${componentTemplate }" flush="true" />
 				</c:forEach>
 			</div>
 		</div>
@@ -47,7 +47,7 @@
 		<div class="row-fluid">
 			<div class="span12 well">
 				<c:forEach var="componentTemplate" items="${FOOTER }">
-					<tiles:insertDefinition name="${componentTemplate }" />
+					<tiles:insertAttribute value="${componentTemplate }" flush="true" />
 				</c:forEach>
 			</div>
 		</div>

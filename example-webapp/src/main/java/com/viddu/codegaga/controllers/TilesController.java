@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.async.DeferredResult;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.viddu.codegaga.component.ComponentController;
-import com.viddu.codegaga.component.RegionRenderer;
+import com.viddu.codegaga.components.ComponentController;
+import com.viddu.codegaga.components.RegionRenderer;
 
 @Controller
 @RequestMapping("/tiles")

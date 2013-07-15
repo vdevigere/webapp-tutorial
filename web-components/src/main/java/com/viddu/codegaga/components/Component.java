@@ -1,4 +1,4 @@
-package com.viddu.codegaga.component;
+package com.viddu.codegaga.components;
 
 import java.util.Map;
 

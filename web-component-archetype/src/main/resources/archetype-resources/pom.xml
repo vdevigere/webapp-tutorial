@@ -9,7 +9,7 @@
 	<groupId>${groupId}</groupId>
 	<artifactId>${artifactId}</artifactId>
 	<version>${version}</version>
-	<name>recommend-component</name>
+	<name>sample-component</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,9 +29,15 @@
 			<version>3.2.3.RELEASE</version>
 		</dependency>
 		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-el</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
 			<groupId>com.viddu.codegaga</groupId>
 			<artifactId>web-components</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
+	<packaging>war</packaging>
 </project>

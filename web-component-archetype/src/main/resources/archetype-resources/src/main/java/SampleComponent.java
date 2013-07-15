@@ -4,12 +4,13 @@
 package ${package};
 
 import java.util.Map;
-import com.viddu.codegaga.component.Component;
+
+import ${package}.components.Component;
 
 public class SampleComponent implements Component {
 
     public String getViewName(String region) {
-        return "sample";
+        return "/WEB-INF/jsp/sample.jsp";
     }
 
     public Map<String, Object> getModelMap() {

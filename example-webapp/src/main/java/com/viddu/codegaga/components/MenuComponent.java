@@ -8,7 +8,7 @@ import org.apache.tiles.beans.MenuItem;
 import org.apache.tiles.beans.SimpleMenuItem;
 import org.springframework.ui.ModelMap;
 
-import com.viddu.codegaga.component.Component;
+import com.viddu.codegaga.components.Component;
 import com.viddu.codegaga.models.MenuBO;
 
 public class MenuComponent implements Component {
@@ -16,7 +16,8 @@ public class MenuComponent implements Component {
 
     @Override
     public String getViewName(String region) {
-        return "menu";
+//        return "menu";
+        return "/WEB-INF/jsp/menu.jsp";
     }
 
     @Override

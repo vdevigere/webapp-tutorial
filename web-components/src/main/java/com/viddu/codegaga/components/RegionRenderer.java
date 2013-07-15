@@ -1,4 +1,4 @@
-package com.viddu.codegaga.component;
+package com.viddu.codegaga.components;
 
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -7,6 +7,8 @@ import java.util.Set;
 import java.util.concurrent.Callable;
 
 import javax.inject.Inject;
+
+import org.apache.tiles.Attribute;
 
 import scala.concurrent.ExecutionContext;
 import scala.concurrent.Future;
@@ -28,14 +30,15 @@ public class RegionRenderer{
         for (String region : regionSet) {
             Set<Component> regionComponents = componentRegistry.getComponentsByRegion(region);
             if (regionComponents != null) {
-                Set<String> componentViewSet = new LinkedHashSet<String>();
+                Set<Attribute> componentViewSet = new LinkedHashSet<Attribute>();
                 for (Component component : regionComponents) {
                     if (component.getModelMap() != null) {
                         modelMap.putAll(component.getModelMap());
                     }
 
                     if (component.getViewName(region) != null) {
-                        componentViewSet.add(component.getViewName(region));
+                        Attribute attribute = Attribute.createTemplateAttribute(component.getViewName(region));
+                        componentViewSet.add(attribute);
                     }
                 }
                 modelMap.put(region.toString(), componentViewSet);

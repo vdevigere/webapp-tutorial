@@ -5,20 +5,26 @@ import java.util.Map;
 
 import org.springframework.ui.ModelMap;
 
-import com.viddu.codegaga.component.Component;
+import com.viddu.codegaga.components.Component;
 import com.viddu.codegaga.models.ProductInfo;
 import com.viddu.codegaga.models.SizeEnum;
 
 public class ProductComponent implements Component {
 
+//    private static final String PRODUCT_RECS_TEMPLATE = "productRecs";
+//    private static final String PRODUCT_TEMPLATE = "product";
+
+    private static final String PRODUCT_RECS_TEMPLATE = "/WEB-INF/jsp/product-recs.jsp";
+    private static final String PRODUCT_TEMPLATE = "/WEB-INF/jsp/product.jsp";
+
     @Override
     public String getViewName(String region) {
         if (region.equalsIgnoreCase("MAIN")) {
-            return "product";
+            return PRODUCT_TEMPLATE;
         } else if (region.equalsIgnoreCase("FOOTER")) {
-            return "productRecs";
+            return PRODUCT_RECS_TEMPLATE;
         } else {
-            return "product";
+            return PRODUCT_TEMPLATE;
         }
     }
 

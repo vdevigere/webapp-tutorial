@@ -13,7 +13,7 @@
 	<context:component-scan base-package="com.viddu.codegaga.controllers" />
 
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver" />
-	<bean id="regionRenderer" class="com.viddu.codegaga.component.RegionRenderer" />
+	<bean id="regionRenderer" class="com.viddu.codegaga.components.RegionRenderer" />
 
 	<bean id="componentRegistry" class="com.viddu.codegaga.components.ComponentRegistryImpl" />
 </beans>

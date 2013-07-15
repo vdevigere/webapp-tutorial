@@ -10,9 +10,10 @@
 	<url>http://maven.apache.org</url>
 	<modules>
 		<module>web-components</module>
-		<module>example-webapp</module>
 		<module>recommend-component</module>
-
+		<module>example-webapp</module>
+		
+		<module>web-component-archetype</module>
 	</modules>
 	<dependencies>
 		<dependency>
@@ -26,6 +27,26 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.5</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-extras</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<artifactId>akka-actor_2.10</artifactId>
+			<version>2.2.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -36,11 +57,6 @@
 					<source>1.6</source>
 					<target>1.6</target>
 				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.jboss.as.plugins</groupId>
-				<artifactId>jboss-as-maven-plugin</artifactId>
-				<version>7.4.Final</version>
 			</plugin>
 		</plugins>
 	</build>
